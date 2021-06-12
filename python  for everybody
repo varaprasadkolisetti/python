@@ -11,6 +11,7 @@ py= hours*rte
 pay= float(py)
 print("Pay:",pay)
 
+***************************************************************************************************
 
 #python for everybody week 5 exercise 3.1
  Write a program to prompt the user for hours and rate per hour using input to compute gross pay. Pay the hourly rate for the hours up to 40 and 1.5 times the hourly rate for all hours worked above 40 hours. Use 45 hours and a rate of 10.50 per hour to test the program (the pay should be 498.75). You should use input to read a string and float() to convert the string to a number. Do not worry about error checking the user input - assume the user types numbers properly.
@@ -26,9 +27,7 @@ if(h<=40):
 elif(h>40):
     tot=40*rph+((h-40)*rph)*1.5
     print(tot)
-
-
-
+    ******************************************************************************************************
 #python for everybody week 5 exercise 3.3
 # Write a program to prompt for a score between 0.0 and 1.0. If the score is out of range, print an error. If the score is between 0.0 and 1.0, print a grade using the following table:
 Score Grade
@@ -54,7 +53,7 @@ elif sc<0.6:
     print('f') 
 else:
     print("exit")
-   ********************************************************************
+   ***********************************************************************************************
  #python for everybody week 6 exercise 4.6
  4.6 Write a program to prompt the user for hours and rate per hour using input to compute gross pay. Pay should be the normal rate for hours up to 40 and time-and-a-half for the hourly rate for all hours worked above 40 hours. Put the logic to do the computation of pay in a function called computepay() and use the function to do the computation. The function should return a value. Use 45 hours and a rate of 10.50 per hour to test the program (the pay should be 498.75). You should use input to read a string and float() to convert the string to a number. Do not worry about error checking the user input unless you want to - you can assume the user types numbers properly. Do not name your variable sum or use the sum() function.
    
@@ -75,7 +74,7 @@ rate = float(rph)
 p = computepay(hours,rate)
 print("Pay",p)
 
-**********************************end*************
+**********************************end***********************************************
 
  #python for everybody week 7 exercise 5.2
  
@@ -111,7 +110,7 @@ print ("Minimum is",smallest)
 tt= text.find(':')
 tet=(text[23:])
 print(float(tet))
-*****************************************************
+*********************************************************************************************
    
 #python for everybody week 7 exercise 7.1
 
@@ -124,9 +123,30 @@ fh = open(fname)
 for line in fh:
     line=line.upper()
     print(line.strip())
-    ***********************************************
+    ***************************************************************************************
     
+    #python for everybody week 7 exercise 7.2
+7.2 Write a program that prompts for a file name, then opens that file and reads through the file, looking for lines of the form:
+X-DSPAM-Confidence:    0.8475
+Count these lines and extract the floating point values from each of the lines and compute the average of those values and produce an output as shown below. Do not use the sum() function or a variable named sum in your solution.
+You can download the sample data at http://www.py4e.com/code3/mbox-short.txt when you are testing below enter mbox-short.txt as the file name.
+
+code__________________
+
+# Use the file name mbox-short.txt as the file name
+fname = input("Enter file name: ")
+fh = open(fname)
+count=0
+total=0
+for line in fh:
     
+    if not line.startswith("X-DSPAM-Confidence:"):
+        continue
+    else:
+        count=count+1
+        
+    slicing=float(line[19:])
+    total=slicing+total
+print("Average spam confidence:",(total/count))
 
-
-  
+***************************************************************************************
